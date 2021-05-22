@@ -2,51 +2,52 @@
   <div id="Crud">
     <header class="header">
       <h1>Produtos</h1>
+      <button class="btn btn-info" @click="abrirForm ()">Abrir/Fechar Form</button>
     </header>
     <div class="container-fluid">
-      <form class="form" id="">
+      <form class="form" v-if="formIsOpen">
           <div>
-            <label class="form-label">Obs Remessa</label>
+            <label>Obs Remessa</label>
             <input type="text" v-model="produto.ObsRemessa" placeholder="Ex.: Prazo maior 360 dias">
           </div>
           <div>
-            <label class="form-label">Obs Remessa</label>
+            <label>Ordem venda</label>
             <input type="text" v-model="produto.OrdemVenda" placeholder="Ex.: SO-202223777">
           </div>
           <div>
-            <label class="form-label">Obs Remessa</label>
+            <label>Oferta</label>
             <input type="number" v-model="produto.Oferta" placeholder="Ex.: 2399013098">
           </div>
           <div>
-            <label class="form-label">Obs Remessa</label>
+            <label>Região</label>
             <input type="text" v-model="produto.Regiao" placeholder="Ex.: CERRADO">
           </div>
           <div>
-            <label class="form-label">Obs Remessa</label>
+            <label>Local</label>
             <input type="text" v-model="produto.Local" placeholder="Ex.: CAMPO DO MEIO">
           </div>
           <div>
-            <label class="form-label">Obs Remessa</label>
+            <label>Equipe</label>
             <input type="text" v-model="produto.Equipe" placeholder="Ex.: WE5">
           </div>
           <div>
-            <label class="form-label">Obs Remessa</label>
+            <label>Cliente</label>
             <input type="text" v-model="produto.Cliente" placeholder="Ex.: JOAO MARCOS LARA">
           </div>
           <div>
-            <label class="form-label">Obs Remessa</label>
+            <label>Produto</label>
             <input type="text" v-model="produto.Produto" placeholder="Ex.: Coffe Arabica">
           </div>
           <div>
-            <label class="form-label">Obs Remessa</label>
+            <label>Recebedor</label>
             <input type="number" v-model="produto.Recebedor" placeholder="Ex.: 10433408">
           </div>
           <div>
-            <label class="form-label">Obs Remessa</label>
+            <label>Descrição Recebedor</label>
             <input type="text" v-model="produto.DescricaoRecebedor" placeholder="Ex.: COOP REG CAFEIC GUAXUPE LTDA">
           </div>
           <div>
-            <label class="form-label">Obs Remessa</label>
+            <label>Modalide</label>
             <input type="text" v-model="produto.Modalidade" placeholder="Ex.: U3">
           </div>
           <div>
@@ -58,13 +59,14 @@
             </select>
           </div>
           <div>
+            <label>Ptax Valor</label>
             <input type="number" v-model="produto.PtaxValor" placeholder="Ex.: 1,0000" class="form-label">
           </div>
           <button @click.prevent="salvar()" class="btn btn-primary">Salvar</button>
         </form>
     </div>
-      <div>
-        <table class="table table-dark table-hover table-striped" id="example">
+      <div class="table-container">
+        <table class="table table-dark table-hover table-striped">
           <thead>
             <tr>
               <th v-for="elemento in elementoLista" :key='elemento.item'>{{elemento.item}}</th>
@@ -100,6 +102,11 @@
 export default {
     data () {
       return {
+        //show divs
+        formIsOpen: false,
+        tableIsOpen: false,
+        tableNullMsg: false,
+        //crud
         elementoLista: [
           {item: 'Obs Remessa'},
           {item: 'Ordem Venda'},
@@ -137,6 +144,11 @@ export default {
       }
     },
     methods: {
+      //show divs
+      abrirForm () {
+        this.formIsOpen = !this.formIsOpen
+      },
+      //crud
       salvar () {
         const metodo = this.id ? 'patch' : 'post'
         const finalUrl = this.id ? `/${this.id}.json` : '.json'
@@ -177,5 +189,37 @@ export default {
     background: var(--bs-dark);
     color: var(--bs-light);
     height: 77px;
+  }
+  .form{
+    margin: 35px 20%;
+  }
+  .form div{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+  }
+  .form div label{
+    margin: 5px 0px 0px 0px;
+    font-weight: 500;
+  }
+  .form div input{
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+  }
+  .form div select{
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+  .btn-primary{
+    width: 100%;
+    margin-top: 20px;
+  }
+  .btn-info{
+    margin-left: 25px;
+  }
+  .table-container{
+    margin-top: 5px;
   }
 </style>
