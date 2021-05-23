@@ -1,4 +1,4 @@
-# frontend
+# Como rodar o projeto localmente
 
 ## Setando o projeto
 ```
