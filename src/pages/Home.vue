@@ -3,6 +3,7 @@
     <header class="header">
       <h1>Produtos</h1>
       <button class="btn btn-info" @click="abrirForm ()">Abrir/Fechar Form</button>
+      <input type="text" placeholder="Pesquisar..." v-model="busca">
     </header>
     <div class="container-fluid">
       <form class="form" v-if="formIsOpen">
@@ -157,6 +158,7 @@ export default {
         .then(
           () => {this.limparCampos() 
           this.obterProdutos()})
+          alert('Item salvo.')
       },
       carregar(id) {
         this.id = id
@@ -164,6 +166,9 @@ export default {
       },
       excluir(id){
         this.$http.delete(`/produtos/${id}.json`).then( () => this.obterProdutos())
+        .catch(() => {
+          alert('Erro, não foi possível excluir.')
+        })
       },
       obterProdutos() {
         this.$http.get('produtos.json').then(res => {
