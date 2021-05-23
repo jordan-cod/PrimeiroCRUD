@@ -3,7 +3,6 @@
     <header class="header">
       <h1>Produtos</h1>
       <button class="btn btn-info" @click="abrirForm ()">Abrir/Fechar Form</button>
-      <input type="text" placeholder="Pesquisar..." v-model="busca">
     </header>
     <div class="container-fluid">
       <form class="form" v-if="formIsOpen">
@@ -106,7 +105,6 @@ export default {
         //show divs
         formIsOpen: false,
         tableIsOpen: false,
-        tableNullMsg: false,
         //crud
         elementoLista: [
           {item: 'Obs Remessa'},
