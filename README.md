@@ -1,16 +1,21 @@
 # Como rodar o projeto localmente
 
-## Setando o projeto
+##Primeiro baixe o projeto com o comando :
+```
+git clone https://github.com/jordan-cod/estagio.git
+```
+
+## Depois instale as dependencias necessarias com :
 ```
 npm install
 ```
 
-### Compilar e rodar no localhost
+### para compilar e rodar no localhost
 ```
 npm run serve
 ```
 
-### Compilar e rodar para produção
+### para compilar e rodar em modo de produção
 ```
 npm run build
 ```
