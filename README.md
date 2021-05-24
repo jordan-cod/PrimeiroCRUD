@@ -19,4 +19,4 @@ npm run serve
 ```
 npm run build
 ```
-<a href='https://estagio.vercel.app/#/'>Página do app online</a>
+<a href='https://estagio.vercel.app/#/' style='text-align = center'>Página do app online</a>
