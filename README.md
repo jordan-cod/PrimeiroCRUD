@@ -1,22 +1,2 @@
-# Como rodar o projeto localmente
+# Simple CRUD
 
-## Primeiro baixe o projeto com o comando :
-```
-git clone https://github.com/jordan-cod/estagio.git
-```
-
-## Depois instale as dependencias necessarias com :
-```
-npm install
-```
-
-### Para compilar e rodar no localhost
-```
-npm run serve
-```
-
-### Para compilar e rodar em modo de produção
-```
-npm run build
-```
-<a href='https://estagio.vercel.app/#/' style='text-align = center'>Página do app online</a>
