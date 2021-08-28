@@ -38,6 +38,10 @@ $ vue serve
 
 Acesse o Local Host que aparecer no seu CMD.
 
+OU
+<br>
+* Acesse o site <a href="https://estagio.vercel.app/#/">aqui<a>
+
 ---
 
 ### :hammer: **Tecnologias**
@@ -57,3 +61,4 @@ As seguintes ferramentas foram utilizadas na construção do projeto:
  <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/79179555?v=4" width="100px;" alt="Foto de Perfil Gabriel Jordan"/>
  <br />
  <sub><b>Gabriel Jordan</b></sub></a>
+ 
